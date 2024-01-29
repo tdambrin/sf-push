@@ -1,0 +1,21 @@
+name: Push to Snowflake
+
+on:
+  workflow_dispatch:
+
+jobs:
+  push-to-sf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push to snowflake
+        id: push_sf
+        uses: tdambrin/sf-push@v1
+        env:
+          ACTION_SF_ACCOUNTS: ${{ secrets.ACTION_SF_ACCOUNTS }}
+          ACTION_SF_USERNAMES: ${{ secrets.ACTION_SF_USERNAMES }}
+          ACTION_SF_PASSWORDS: ${{ secrets.ACTION_SF_PASSWORDS }}
+        with:
+          worksheets_path: demo/worksheets/
+      - name: Print result
+        run: |
+          echo "${{ steps.push_sf.outputs.upload_report }}"

@@ -1,0 +1,45 @@
+name: 'Sf Git Push Action'
+author: 'Thomas Dambrin'
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
+
+description: 'Push your worksheets to Snowflake account(s)'
+inputs:
+  worksheets_path:
+    description: 'Relative path to snowflake worksheets'
+    required: true
+  only_folder:
+    description: 'Only push worksheets that belongs to a specific Snowflake folder (Snowflake folder name)'
+    required: false
+outputs:
+  upload_report:
+    description: 'Upload report with pushed worksheets per account'
+    value: ${{ steps.push.outputs.upload_report }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Install Dependencies
+      run: pip install -r requirements.txt
+      shell: bash
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Upload to Snowflake
+      id: push
+      env:
+        ACTION_BRANCH_NAME: ${{ github.ref_name }}
+        ACTION_GIT_ROOT: ${{ github.workspace }}
+        ACTION_WORKSHEETS_PATH: ${{ inputs.worksheets_path }}
+        ACTION_ONLY_FOLDER: ${{ inputs.only_folder }}
+        # should be done while calling this action:
+        # ACTION_SF_ACCOUNTS: ${{ secrets.ACTION_SF_ACCOUNTS }}
+        # ACTION_SF_USERNAMES: ${{ secrets.ACTION_SF_USERNAMES }}
+        # ACTION_SF_PASSWORDS: ${{ secrets.ACTION_SF_PASSWORDS }}
+      run: |
+        python3 sf_git_push.py
+      shell: bash
