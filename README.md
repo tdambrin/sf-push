@@ -82,7 +82,7 @@ jobs:
 ```
 
 > [!NOTE]  
-> Make sure to replace your worksheets_path with the relative (from root) location of the folder where your worksheets are stored within your repository.
+> Make sure to replace your worksheets_path with the relative location (from root) where your worksheets are stored within your repository.
 
 ### 4. Use it however you like
 
@@ -101,7 +101,7 @@ jobs:
 ### More uses cases: be creative !
 
 ## Policies
-Feedbacks and contributions are greatly appreciated. This package was made to ease every day life for Snowflake 
+Feedbacks and contributions are greatly appreciated. This GitHub Action was made to ease every day life for Snowflake 
 developers and promote version control as much as possible.
 
 For questions, please feel free to reach out [by email](mailto:thomas.dambrin@gmail.com?subject=[GitHub]%20Snowflake%20Push).
