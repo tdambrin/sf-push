@@ -94,6 +94,10 @@ jobs:
 
 ![Local to SF](./doc/images/local_to_accounts.png)
 
+### Synchronize your important worksheets
+
+![Important worksheets](./doc/images/important_worksheets.png)
+
 ### More uses cases: be creative !
 
 ## Policies
