@@ -58,7 +58,8 @@ For example, eastus2 for Azure should actually be east-us-2.
 
 ### 2. Fetch your worksheets locally and commit them
 
-![Init worksheets](./doc/images/first_fetch.png)
+<img src="./doc/images/first_fetch.png" alt="Init worksheets" width="800"/>
+
 
 For more details, please refer to the related documentation in [sf_git README](https://github.com/tdambrin/sf_git/blob/main/README.md).
 
