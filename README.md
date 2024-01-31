@@ -28,7 +28,7 @@ To push to several accounts, simply set the secrets to comma separated values wh
 
 Exemple:
 
-    ACTIONS_SF_ACCOUNTS: myaccount1.eu-west-1.aws, myaccount2.eastus2.azure
+    ACTIONS_SF_ACCOUNTS: myaccount1.eu-west-1.aws, myaccount2.east-us-2.azure
     ACTIONS_SF_USERNAME: John, Linda
     ACTIONS_SF_PASSWORDS: johnSuperPassword, lindas_big_secret
 
