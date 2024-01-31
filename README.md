@@ -53,6 +53,9 @@ SELECT CONCAT(
 FROM INFOS LEFT JOIN SF_REGIONS ON INFOS.CR = SF_REGIONS."snowflake_region";
 ```
 
+Unfortunately, the _region_ is not always the same in the _SHOW REGIONS_ ouput. Please check and adapt the format comforming to the official [documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-region).
+For example, eastus2 for Azure should actually be east-us-2.
+
 ### 2. Fetch your worksheets locally and commit them
 
 ![Init worksheets](./doc/images/first_fetch.png)
