@@ -73,7 +73,7 @@ jobs:
     runs-on: ubuntu-latest
       - name: Push to snowflake
         id: push_sf
-        uses: tdambrin/sf-push@v1
+        uses: tdambrin/sf-push@v2
         env:
           ACTION_SF_ACCOUNTS: ${{ secrets.ACTION_SF_ACCOUNTS }}
           ACTION_SF_USERNAMES: ${{ secrets.ACTION_SF_USERNAMES }}
